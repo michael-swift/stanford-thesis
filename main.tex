@@ -8,20 +8,25 @@
 %
 \documentclass[12pt]{report}
 \usepackage{suthesis-2e}  % (modified) Stanford thesis style file
-
 % useful packages
+\usepackage{verbatim} % a different style of typesetting e.g. \verb|cat hello_world.txt|
+\usepackage{amsmath} 
+\usepackage{amssymb} % for checkmarks in tables
 \usepackage{graphicx}  % figures
 \usepackage{gensymb}  % \degree
+\usepackage{booktabs} % nicer tables
+\usepackage{floatrow} % nicer tables
 \usepackage{siunitx}  % SI units
 \usepackage{tabularx}  % nice single page tables
 \usepackage{longtable}  % tables spanning multiple pages
-\usepackage{hyperref}  % URLs
-\usepackage[autostyle, english = american]{csquotes}  % quote orientation
-\MakeOuterQuote{"}
+%\usepackage{hyperref}  % URLs
+\usepackage[hidelinks]{hyperref}
+%\usepackage[autostyle, english = american]{csquotes}  % quote orientation
+%\MakeOuterQuote{"}
 
 % use png first, otherwise pdf
 % (useful for faster compile times, for final submission switch order)
-\DeclareGraphicsExtensions{.png,.pdf}
+\DeclareGraphicsExtensions{.pdf, .png}
 \begin{document}
 \title{Generation and Inheritance of Diversity \newline in the Immune Human System}
 \author{Michael Aaron Swift}
@@ -45,6 +50,7 @@
 \include{ch_paper1}
 \include{ch_paper2}
 \include{ch_paper3}
+\include{ch_paper3_SI}
 \include{ch_conclusion}
 
 % uncomment below if you have an appendix
@@ -56,6 +62,6 @@
 
 % adds a non-numbered signature page at end (for printing on ACID-FREE paper)
 % (remember to comment out when submitting final version)
-\onlinesignature
+%\onlinesignature
 
 \end{document}

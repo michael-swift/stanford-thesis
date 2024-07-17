@@ -43,7 +43,7 @@ Finally, I performed tissue-specific gene expression analysis and clonal analysi
 
 \subsection{Tissue-Specific Gene Expression Signatures of Immune Cells}
 
-We performed a differential gene expression analysis on the immune cell types across all of the tissues, revealing tissue-specific gene expression signatures of immune cells. Although we identified signatures of interest for most cell types in our dataset, here we focus here on the 36,475 macrophages distributed amongst 20 tissues. Using PCA on the top 300 differentially expressed genes in macrophage across all tissues, we show a number of highly distinct macrophage subtypes (Figure \ref{fig:TabulaSapiens_gex}A). PCA distinguished lung and lymph node macrophages from all other macrophages, driven largely by the high expression of CHIT1 and anti-microbial genes. Macrophage in the spleen were unique amongst tissues, expressing SPIC and CD5L. This suggests that most macrophages in the spleen are red-pulp macrophages. Additionally, we identified a gradient of EREG expression that distinguished tissues such as skin, uterus, and mammary tissues from circulating macrophages in the blood (Figure \ref{fig:TabulaSapiens_gex}B). EREG, secreted by macrophages, is thought to participate in cancer progression and facilitate the tumor micro-environment but also has important roles in homeostatic maintenance of tissues. We summarize our analysis by plotting a clustermap of gene expression signatures of the macrophages and their tissue-defining genes (Figure \ref{fig:TabulaSapiens_gex}C), and by providing the gene loadings of the first 4 principal components in our analysis (Figure \ref{fig:TabulaSapiens_gex}D). 
+We performed a differential gene expression analysis on the immune cell types across all of the tissues, revealing tissue-specific gene expression signatures of immune cells. Although we identified signatures of interest for most cell types in our dataset, here we focus here on the 36,475 macrophages distributed amongst 20 tissues. Using PCA on the top 300 differentially expressed genes in macrophage across all tissues, we show a number of highly distinct macrophage subtypes (Figure \ref{fig:TabulaSapiens_gex}\textbf{A}). PCA distinguished lung and lymph node macrophages from all other macrophages, driven largely by the high expression of CHIT1 and anti-microbial genes. Macrophage in the spleen were unique amongst tissues, expressing SPIC and CD5L. This suggests that most macrophages in the spleen are red-pulp macrophages. Additionally, we identified a gradient of EREG expression that distinguished tissues such as skin, uterus, and mammary tissues from circulating macrophages in the blood (Figure \ref{fig:TabulaSapiens_gex}\textbf{B}). EREG, secreted by macrophages, is thought to participate in cancer progression and facilitate the tumor micro-environment but also has important roles in homeostatic maintenance of tissues. We summarize our analysis by plotting a clustermap of gene expression signatures of the macrophages and their tissue-defining genes (Figure \ref{fig:TabulaSapiens_gex}\textbf{C}), and by providing the gene loadings of the first 4 principal components in our analysis (Figure \ref{fig:TabulaSapiens_gex}\textbf{D}). 
 \begin{figure}[hbt!]
 \centering
 \includegraphics[width=14cm, keepaspectratio]{figs/TabulaSapiens/fig1_gex_analysis.png}
@@ -52,11 +52,11 @@ We performed a differential gene expression analysis on the immune cell types ac
 \end{figure}
 
 \subsection{Background the Adaptive Immune System}
-Our analysis aimed to elucidate the molecular details of immune cell trafficking within individual humans by comparing different immune cell subsets across various tissues. These cells are known to originate in specific niches, circulate throughout the body, and home to other niches where they can remain for on time-scales ranging from minutes\cite{jerison_heterogeneous_2020} to years\cite{hammarlund_plasma_2017}. The adaptive immune system consists of T cells and B cells which mount a specific response to pathogens and vaccines. B cells produce antibodies and T cells direct attack infected cells through the MHC system. These lymphocytes express relatively unique receptors on their cell surface (BCRs and TCRs)(Figure \ref{fig:TabulaSapiens_airr}A), which are created in a stochastic process which results in the creation of diverse gene combinations\cite{alberts2017molecular}. Thus, lymphocytes are relatively uniquely marked at the time of their origin, such that observation of the same sequence in two cells indicates a clonal relationship between them. In order to identify these clones by their immune receptor, we needed to sequence the TCR or BCR. The techniques for sequencing TCRs and BCRs are called Airr-seq, or Adaptive Immune Receptor Repertoire sequencing. It is a high-throughput sequencing method that enables the in-depth analysis of the T cell receptor (TCR) and B cell receptor (BCR) repertoires of the adaptive immune system. 
+Our analysis aimed to elucidate the molecular details of immune cell trafficking within individual humans by comparing different immune cell subsets across various tissues. These cells are known to originate in specific niches, circulate throughout the body, and home to other niches where they can remain for on time-scales ranging from minutes\cite{jerison_heterogeneous_2020} to years\cite{hammarlund_plasma_2017}. The adaptive immune system consists of T cells and B cells which mount a specific response to pathogens and vaccines. B cells produce antibodies and T cells direct attack infected cells through the MHC system. These lymphocytes express relatively unique receptors on their cell surface (BCRs and TCRs)(Figure \ref{fig:TabulaSapiens_airr}\textbf{A}), which are created in a stochastic process which results in the creation of diverse gene combinations\cite{alberts2017molecular}. Thus, lymphocytes are relatively uniquely marked at the time of their origin, such that observation of the same sequence in two cells indicates a clonal relationship between them. In order to identify these clones by their immune receptor, we needed to sequence the TCR or BCR. The techniques for sequencing TCRs and BCRs are called Airr-seq, or Adaptive Immune Receptor Repertoire sequencing. It is a high-throughput sequencing method that enables the in-depth analysis of the T cell receptor (TCR) and B cell receptor (BCR) repertoires of the adaptive immune system. 
 
 \begin{figure}[hbt!]
 \centering
-\includegraphics[width=10cm, keepaspectratio]{figs/TabulaSapiens/fig2_tabula_airr.png}
+\includegraphics[width=9cm, keepaspectratio]{figs/TabulaSapiens/fig2_tabula_airr.png}
 \caption[AIRR-seq for analyzing the T cell Repertoire in Tabula Sapiens]{A. Schematic of AIRR-seq. B. Countplot of TCRs and BCRs computationally assembled from Smart-Seq2 and 10X 5prime data. MAIT cells and other invariant T cells use a stereotypical repertoire of V and J genes. Multi-donor T cell clones (left) tended to use a restricted set of known MAIT genes as compared to the (downsampled for comparison) full T cell repertoire (left)}
 \label{fig:TabulaSapiens_airr}
 \end{figure}
@@ -64,7 +64,7 @@ Our analysis aimed to elucidate the molecular details of immune cell trafficking
 
 
 \subsection{Computational Analysis of TCR and BCR from single cells}
-We attempted computational assembly of TCR and BCR for all cells sequenced via Smartseq2 and the subset of cells sequenced using the 10X 5' system. Our pipeline yielded order thousands of TCRs and BCRs for analysis (Figure\ref{fig:TabulaSapiens_airr}B). We also investigated where convergent T cell clones could be detected amongst donors. Since VDJ recombination proceeds stochastically and relatively uniquely in each donor, similar VDJ recombination signatures across donors would suggest there are certain cases where a limited repertoire of recombination genes is used. Using the VDJ recombination signature of T cells, we found that multi-donor T cell clones did indeed tend to use a restricted set of genes known to be used by Mucosal Associated Invariant T cells(Figure\ref{fig:TabulaSapiens_airr}D). 
+We attempted computational assembly of TCR and BCR for all cells sequenced via Smartseq2 and the subset of cells sequenced using the 10X 5' system. Our pipeline yielded order thousands of TCRs and BCRs for analysis (Figure\ref{fig:TabulaSapiens_airr}\textbf{B}). We also investigated where convergent T cell clones could be detected amongst donors. Since VDJ recombination proceeds stochastically and relatively uniquely in each donor, similar VDJ recombination signatures across donors would suggest there are certain cases where a limited repertoire of recombination genes is used. Using the VDJ recombination signature of T cells, we found that multi-donor T cell clones did indeed tend to use a restricted set of genes known to be used by Mucosal Associated Invariant T cells (MAIT) (Figure\ref{fig:TabulaSapiens_airr}\textbf{D}). 
 
 \subsection{Cross-Referencing TCR/Epitope Pairings with Tabula Sapiens}
 
@@ -73,12 +73,12 @@ We downloaded a curated database of TCR/epitope pairings containing 54,181 uniqu
 \renewcommand{\arraystretch}{2}  % make spacing nicer
 \begin{table}[hbt!]
 \centering
-\begin{tabularx}{10cm}{cc}  % 2 columns center-justified
+\begin{tabularx}{\textwidth}{Xc}  % 2 columns, left column (X) adjusted to fit
    \textbf{Virus} & \textbf{Number of Peptides} \\
    \hline  % horizontal line
 Epstein-Barr Virus (EBV) & 12 peptides \\
 \hline
- Cytomegalovirus (CMV) & 8 peptides \\
+Cytomegalovirus (CMV) & 8 peptides \\
 \hline
 Influenza A & 5 peptides \\
 \hline
@@ -87,10 +87,11 @@ Influenza A & 5 peptides \\
 \label{tab:TabulaSapiens_tab1_viral_peptides}
 \end{table}
 
-\subsection{Distributions of Virus-Binding T Cells}
-The EBV-binding T cells were found in donors TSP2 and TSP7. In TSP7, the single EBV-specific T cell was located in the tongue. In TSP2, EBV-specific T cells were distributed amongst multiple immune organs. We could not perform any meaningful statistical comparison with such low numbers of cells. We also analyzed the cell types for virus specific T cells. We found a subtle enrichment of CD4 and CD8 T cells associated with viral peptide binding TCRs (Figure\ref{fig:TabulaSapiens_airr}C). This enrichment was not significant, but likely would be given more cells to analyze.
 
-Finally, we visualized the distribution of T cell clones across the tissues we sampled for TSP2, the donor which had the most T cells available for analysis. We represented these tissue-clone relationships with a Sankey plot, that shows the networks of T cell clones shared by different tissues in the body(Figure\ref{fig:TabulaSapiens_sankey}). In particular, there appears to be network of clones which move between the Bone Marrow, Spleen, and Blood. Additionally, when clones are large enough, they are readily detectable in many disparate tissues (e.g. clone m, Muscle and Spleen), suggesting broad movement of large clones throughout the body    
+\subsection{Distributions of Virus-Binding T Cells}
+The EBV-binding T cells were found in donors TSP2 and TSP7. In TSP7, the single EBV-specific T cell was located in the tongue. In TSP2, EBV-specific T cells were distributed amongst multiple immune organs. We could not perform any meaningful statistical comparison with such low numbers of cells. We also analyzed the cell types for virus specific T cells. We found a subtle enrichment of CD4 and CD8 T cells associated with viral peptide binding TCRs (Figure\ref{fig:TabulaSapiens_airr}\textbf{C}). This enrichment was not significant, but likely would be given more cells to analyze.
+
+Finally, we visualized the distribution of T cell clones across the tissues we sampled for TSP2, the donor which had the most T cells available for analysis. We represented these tissue-clone relationships with a Sankey plot, that shows the networks of T cell clones shared by different tissues in the body(Figure\ref{fig:TabulaSapiens_sankey}). In particular, there appears to be network of clones which move between the Bone Marrow, Spleen, and Blood. Additionally, when clones are large enough, they are readily detectable in many disparate tissues (e.g. clone m, Muscle and Spleen), suggesting broad movement of large clones throughout the body.    
 \begin{figure}[hbt!]
 \centering
 \includegraphics[width=14cm, keepaspectratio]{figs/TabulaSapiens/fig4_sankey.png}
@@ -102,11 +103,11 @@ Finally, we visualized the distribution of T cell clones across the tissues we s
 
 \subsection{Isotype Distribution in B Cells Across Tissues}
 
-B cells secrete different isotypes of the IgH gene, which have different roles in immunity. IgA interacts with pathogens and commensals at mucosal surfaces, IgG is often involved in direct neutralization of pathogens, and IgM is typically expressed in naive B cells or secreted in the first response to pathogens. We classified every B cell in the dataset as expressing IgA, IgG, or IgM and calculated the relative amounts of each isotype in each tissue. This analysis revealed a gradient of IgA expression across tissues, with blood having the least relative abundance of IgA cells and the large intestine having the highest relative abundance (Figure \ref{fig:TabulaSapiens_igh}A).
+B cells secrete different isotypes of the IgH gene, which have different roles in immunity. IgA interacts with pathogens and commensals at mucosal surfaces, IgG is often involved in direct neutralization of pathogens, and IgM is typically expressed in naive B cells or secreted in the first response to pathogens. We classified every B cell in the dataset as expressing IgA, IgG, or IgM and calculated the relative amounts of each isotype in each tissue. This analysis revealed a gradient of IgA expression across tissues, with blood having the least relative abundance of IgA cells and the large intestine having the highest relative abundance (Figure \ref{fig:TabulaSapiens_igh}\textbf{A}).
 
 \subsection{Tissue-Specific Somatic Hypermutation in B Cells}
 
-We measured the level of tissue-specific somatic hypermutation in B cells by computationally assembling the B Cell Receptor (BCR) and then inferring the germline ancestor of each cell\cite{lindeman2018bracer,gupta2015change}. In the bone marrow, we observed a bimodal distribution of hypermutation, consistent with the coexistence of plasma cells and recently birthed B cells (Figure \ref{fig:TabulaSapiens_igh}B). Solid tissues have an order of magnitude higher level of mutations per nucleotide (0.07 ±0.04) compared to the blood (0.007±0.02), suggesting that immune infiltrates of solid tissues are dominated by antigen experienced B cells.
+We measured the level of tissue-specific somatic hypermutation in B cells by computationally assembling the B Cell Receptor (BCR) and then inferring the germline ancestor of each cell\cite{lindeman2018bracer,gupta2015change}. In the bone marrow, we observed a bimodal distribution of hypermutation, consistent with the coexistence of plasma cells and recently birthed B cells (Figure \ref{fig:TabulaSapiens_igh}\textbf{B}). Solid tissues have an order of magnitude higher level of mutations per nucleotide (0.07 ±0.04) compared to the blood (0.007±0.02), suggesting that immune infiltrates of solid tissues are dominated by antigen experienced B cells.
 
 \begin{figure}[hbt!]
 \centering
@@ -118,7 +119,7 @@ Tabula Sapiens.}
 
 \section{Conclusions}
 
-Our results provide valuable insights into immune cell trafficking, tissue-specific gene expression signatures, and the distribution of virus-binding T cells across different tissues. We observed tissue-specific gene expression signatures in all immune cells. Here we presented the macrophages, and identified gradients of EREG expression that distinguished tissue-resident macrophages from circulating ones. We used TCR data to analyze the distribution of virus-binding clones in the body, although we were quite limited by low sampling. In the future, higher-throughput efforts profiling T cells across the body should shed light on how tissue resident T cell memory is maintained and distributed throughout tissues. In the case of B cells and the antibody repertoire, we described the tissue-specific differences in B cell somatic hypermutation and isotype distribution. These data prove conceptually, that a much more deeply sampled study of the adaptive immune system at single cell resolution, could provide a detailed description of the differentiation dynamics throughout the tissues in the human body.
+Our results provide valuable insights into immune cell trafficking, tissue-specific gene expression signatures, and the distribution of virus-binding T cells across different tissues. Our data have substantial limitations in sampling, which reduces our ability to make strong claims about, for example, the distribution of T cell or B cell clones throughout the body. Additionally, we measured the RNA content of cells, and used that as an abstraction for their cellular state. There are many other important dynamics processes which may explain the variation we see in tissues and cells -- namely post-translational modifications and chromatin states. Nonetheless, we observed tissue-specific gene expression signatures in all immune cells. Here we presented the macrophages, and identified gradients of EREG expression that distinguished tissue-resident macrophages from circulating ones. The EREG expression gradient likely points to roles of macrophage in maintaining tissue homeostasis. We used TCR data to analyze the distribution of virus-binding clones in the body, although we were quite limited by low sampling. In the future, higher-throughput efforts profiling T cells across the body should shed light on how tissue resident T cell memory is maintained and distributed throughout tissues. In the case of B cells and the antibody repertoire, we described the tissue-specific differences in B cell somatic hypermutation and isotype distribution. These data prove conceptually, that a much more deeply sampled study of the adaptive immune system at single cell resolution, could provide a detailed description of the differentiation dynamics throughout the tissues in the human body.
 
 \section{Materials and Methods}
 \subsection{Vertebral Body Tissue Processing}
@@ -136,7 +137,7 @@ strainers were used in case of clogs. After straining, the cells were centrifuge
 330g 4°C for 5 minutes. Cells were resuspended in 1x Erythrocyte Lysis buffer, kept 5 minutes
 on ice and mixed. Cells were then re-centrifuged for 5 minutes at 330g at 4°C without brakes, in
 order to remove plasma and lysed red blood cells. Cells were then ready to count. 10 million bone
-marrow cells were stained using an immune lineagePE cocktail containing CD3-PE, CD4-PE,
+marrow cells were stained using an immune lineage PE cocktail containing CD3-PE, CD4-PE,
 CD56-PE, CD11b-PE, and CD14-PE, and subsequent MACS with anti-PE microbeads was
 performed. One tube of immune lineage positive and one tube of lineage negative cell were
 prepared for the 10x. For Smartseq2, cells were stained with anti-CD38-APC, anti-CD34-FITC,
@@ -150,31 +151,26 @@ were used: bowtie2 version 2.3.0, igblast version 1.7.0, kallisto version v0.43.
 0.14.1, Trinity version v2.4.0, GRCh38 reference genome. Step-by-step instructions to reproduce
 the processing of the data are available from GitHub.
 \subsubsection{B-Cell processing}
-BraCeR\cite{lindeman2018bracer} version 0.1 \url{https://github.com/czbiohub/nf-bracer)} was used to identify B-Cell clonal
+BraCeR\cite{lindeman2018bracer} version 0.1 was used to identify B-Cell clonal
 populations. Bracer assemble was run with --species Hsap set. We then ran bracer summarise
 with --species Hsap to create the final results. The following versions for BraCeR dependencies
 were used: bowtie2 version 2.3.4.1, igblast version 1.4.0, blast 2.6.0, kallisto version v0.43.1,
-Salmon version 0.8.2, Trinity version v2.8.5, GRCh38 reference genome. Step-by-step
-instructions to reproduce the processing of the data are available from GitHub.
+Salmon version 0.8.2, Trinity version v2.8.5, GRCh38 reference genome.
 \subsubsection{Data Merging and Immune Repertoire Analysis}
 BCR and TCR processing and merging were done via snakemake\cite{koster2012snakemake} and code is available on
-github at \url{https://github.com/czbiohub/tabula-sapiens}. Analysis on the snakemake outputs were
-performed in JupyterLab. Briefly, all assemblies from cell ranger 6.0.1, tracer, and bracer were
+github at \url{https://github.com/czbiohub/tabula-sapiens}. Briefly, all assemblies from cell ranger 6.0.1, tracer, and bracer were
 annotated with IgBLAST 1.8.2\cite{ye_igblast_2013} and output in AIRR format. The resulting file was preprocessed
 Scirpy\cite{sturm_scirpy_2020} and merged with single-cell gene expression data. Only cells which had a matching
 assembly and gene expression data were used for downstream analysis. Scirpy was used to
-assign clonotypes with ir.pp.ir\_dist(adata, metric = "alignment”, sequence ="aa”, cutoff = 25) and
-ir.tl.define\_clonotypes(adata, key\_added=``clone\_id”). Graphs of clones were created using graph
-tool Graph-tool\cite{peixoto_graph-tool_2014}. In the case of 3 prime 10X genomics data, isotypes
-were assigned to each B cell by determining the highest expressed immunoglobulin class. Due to a large amount of multi-mapping between sub-isotypes, we
+assign clonotypes with:\newline\verb|ir.pp.ir_dist(adata, metric = "alignment", sequence ="aa", cutoff = 25)| and\newline\verb|ir.tl.define_clonotypes(adata, key_added="clone_id")|. 
+\newline Graphs of clones were created using Graph-tool\cite{peixoto_graph-tool_2014}. In the case of 3 prime 10X genomics data, isotypes were assigned to each B cell by determining the highest expressed immunoglobulin class. Due to a large amount of multi-mapping between sub-isotypes, we
 summed the gene expression values in each cell for genes in each class-group (IgA, IgG, IgM/D).
 Subtypes were generally not resolvable due to high homology between e.g., IgA1 and IgA2. Otherwise, isotypes labels were taken from the Bracer or Cellranger pipelines.
 Somatic Hypermutation Frequencies were calculated as the Levenshtein edit distance from the V-gene sequence
 to germline V-call.
+
 \subsubsection{Tissue Immune Signature Analysis}
 Genes which were differentially expressed between macrophages residing in different tissues
-were identified using sc.tl.rank\_genes\_groups(adata, groupby = ``tissue”, method = ``wilcoxon”).
-Genes whose expression is known to be affected by tissue dissociation were removed, see table S9 in the Tabula Sapiens manuscript\cite{tabula_sapiens_consortium_tabula_2022}. Genes were then filtered using sc.tl.filter\_rank\_genes\_groups(adata, min\_fold\_change = 0.8, min\_in\_group\_fraction = 0.5). Genes identified in this manner were then
-used as the matrix for subsequent analysis, such as the correlation analysis, cluster-maps, and
-PCA. For plotting, the 500 most variable genes identified in the differential tissue expression
-analysis, sc.tl.highly\_variable\_genes(adata, n\_top\_genes = 500).
+were identified using:\newline \verb|sc.tl.rank_genes_groups(adata,groupby = "tissue", method = "wilcoxon")|.
+Genes whose expression is known to be affected by tissue dissociation were removed, see table S9 in the Tabula Sapiens manuscript\cite{tabula_sapiens_consortium_tabula_2022}. Genes were then filtered using\newline\verb|sc.tl.filter_rank_genes_groups(adata)|\newline
+the minimum log-fold change as 1 and the minimum in-group fraction as 0.5. Genes identified in this manner were then used as the matrix for subsequent analysis, such as the correlation analysis, cluster-maps, and PCA.
